@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,24 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+::-moz-selection {
+  background-color: #fff;
+  color: #000;
+}
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -14,6 +34,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -23,7 +44,9 @@ body {
   color: #fff;
 }
 
-h1 {
+.comming-soon {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -31,10 +54,9 @@ h1 {
   position: relative;
   font-variant-caps: all-petite-caps;
   letter-spacing: 2px;
-  font-weight: 300;
   color: #fff;
 }
-h1::before {
+.comming-soon::before {
   content: "";
   position: absolute;
   top: 0;
@@ -47,6 +69,43 @@ h1::before {
   transition: 0.3s cubic-bezier(1, 0, 0, 1);
 }
 
-h1:hover::before {
+.comming-soon:hover::before {
   width: 200px;
+}
+
+.my-img {
+  border-radius: 50%;
+  max-width: calc(10vw + 10em);
+  margin: 3em;
+  transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.my-img:hover {
+  filter: opacity(70%);
+}
+
+.contact {
+  text-transform: uppercase;
+  font-size: calc(0.2vw + 8px);
+  letter-spacing: 2px;
+  margin: 2em 0;
+}
+
+.contact .social {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-around;
+}
+.contact .social a {
+  opacity: initial;
+  transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.contact .social svg {
+  max-width: 30px;
+}
+
+.contact .social a:hover {
+  transform: scale(1.2);
+}
+.contact .social a:active {
+  transform: scale(1);
 }
